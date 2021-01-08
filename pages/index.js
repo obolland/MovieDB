@@ -51,6 +51,7 @@ const Home = ({ movies, images, categories }) => {
   Home.getInitialProps = async () => {
     const categories = await getCategories()
     const movies = await getMovies()
+    //console.log(movies)
     const images = movies.map(movie => {
       return {
         id: `image-${movie.id}`,
@@ -58,6 +59,7 @@ const Home = ({ movies, images, categories }) => {
         name: movie.name
       }
     })
+    //console.log(images)
     
     return {
       movies,

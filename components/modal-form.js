@@ -8,7 +8,6 @@ const ModalForm = ({ handleFormSubmit, initialData, submitButton}) => {
     rating: '',
     image: '',
     cover: '',
-    longDesc: ''
   }
   
   const formData = initialData ? {...initialData} : defaultData
@@ -27,12 +26,16 @@ const ModalForm = ({ handleFormSubmit, initialData, submitButton}) => {
     const optionsLength = options.length
     let value = []
 
-    for (let i; i < optionsLength; i++) {
+    for (let i = 0; i < optionsLength; i++) {
       if (options[i].selected) {
         value.push(options[i].value)
       }
     }
-    setForm({...form, genre: value.toString()})
+
+    setForm({
+      ...form,
+      genre: value.toString()
+    })
   }
 
   const submitForm = () => {
@@ -103,17 +106,6 @@ const ModalForm = ({ handleFormSubmit, initialData, submitButton}) => {
             id="cover" 
             placeholder="http://......" 
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="longDesc">Long Description</label>
-          <textarea
-            onChange={handleChange}
-            name="longDesc"
-            value={form.longDesc} 
-            className="form-control" 
-            id="longDesc" 
-            rows="3">
-          </textarea>
         </div>
         <div className="form-group">
           <label htmlFor="genre">Genre</label>

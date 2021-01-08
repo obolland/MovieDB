@@ -13,20 +13,19 @@ const Movie = ({ movie }) => {
         })
     }
     
-    return (
+    return ( 
     <div className='container'>
         <div className="jumbotron text-center">
             <div className="w-60 mx-auto">
             <h1 className="display-4">{movie.name}</h1>
-            <img className="img-item mt-2 mb-2" src={movie.image} />
+            <img className="img-item mt-2 mb-3" src={movie.image} />
             <p className="lead">{movie.description}</p>
             <hr className="my-4" />
             <p>{movie.genre}</p>
-            <button className="btn btn-primary btn-lg mr-1" href="#" role="button">learn More</button>
-            <button onClick={() => handleDeleteMovie(id)} className="btn btn-danger btn-lg mr-1" href="#" role="button">Delete Movie</button>
             <Link href={`/movies/${id}/edit`}>
-                <button className="btn btn-warning btn-lg" role="button">Edit Movie</button>
+                <button className="btn btn-warning btn-lg mr-1" role="button">Edit Movie</button>
             </Link>
+            <button onClick={() => handleDeleteMovie(id)} className="btn btn-danger btn-lg ml-1" href="#" role="button">Delete Movie</button>
         </div>
         </div>
         <style jsx>

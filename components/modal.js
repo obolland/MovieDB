@@ -13,7 +13,7 @@ class Modal extends React.Component {
     }
 
     submitModal = () => {
-        alert('Submitting Modal')
+        alert('Movie added to database')
         this.closeModal()
     }
     

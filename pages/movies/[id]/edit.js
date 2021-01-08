@@ -7,7 +7,9 @@ import ModalForm from '../../../components/modal-form'
 class EditMovie extends React.Component {
 
     static async getInitialProps({query}) {
-        const movie = await getMovieById(query.id)
+        const movieWithoutId = await getMovieById(query.id)
+        //pass query.id into movie object as id
+        const movie = {...movieWithoutId, id: query.id}
         return { movie }
     }
 

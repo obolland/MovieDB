@@ -9,7 +9,6 @@ const SideMenu = ({ categories, changeCategory, activeCategory}) => {
 
     const handleAddMovie = (movie) => {
         addMovie(movie).then((movies) => {
-            console.log(JSON.stringify(movies))
             modal.submitModal()
             router.push('/')
         })
