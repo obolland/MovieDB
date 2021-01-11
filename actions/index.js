@@ -19,29 +19,30 @@ import axios from 'axios';
       }, 50)
     })
   }
+  
 
   export const getMovies = async () => {
-    const res = await axios.get('http://localhost:3000/api/movies')
+    const res = await axios.get('https://movie-db-jade.vercel.app/api/movies')
     return res.data
   }
 
   export const getMovieById = async (id) => {
-    const res = await axios.get(`http://localhost:3000/api/movies/${id}`)
+    const res = await axios.get(`https://movie-db-jade.vercel.app/api/movies/${id}`)
     return res.data
   }
 
   export const addMovie = async (movie) => {
 
-    const res = await axios.post('http://localhost:3000/api/movies', movie)
+    const res = await axios.post('https://movie-db-jade.vercel.app/api/movies', movie)
     return res.data
   }
 
   export const updateMovie = async (movie) => {
-    const res = await axios.patch(`http://localhost:3000/api/movies/update/${movie.id}`, movie)
+    const res = await axios.patch(`https://movie-db-jade.vercel.app/api/movies/update/${movie.id}`, movie)
     return res.data
   }
 
   export const deleteMovie = async (id) => {
-    const res = await axios.delete(`http://localhost:3000/api/movies/${id}`)
+    const res = await axios.delete(`https://movie-db-jade.vercel.app/api/movies/${id}`)
     return res.data
   }
