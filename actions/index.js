@@ -23,31 +23,31 @@ import axios from 'axios';
 //https://movie-db-jade.vercel.app
 //http://localhost:3000
 
-//let baseUrl = '';
-//process.env.VERCEL_ENV === "production" ? baseUrl = process.env.VERCEL_URL : baseUrl = 'http://localhost:3000';
+let baseUrl = '';
+process.env.VERCEL_ENV === "production" ? baseUrl = process.env.VERCEL_URL : baseUrl = 'http://localhost:3000';
 
   export const getMovies = async () => {
-    const res = await axios.get(`https://movie-db-jade.vercel.app/api/movies`)
+    const res = await axios.get(`${baseUrl}/api/movies`)
     return res.data
   }
 
   export const getMovieById = async (id) => {
-    const res = await axios.get(`https://movie-db-jade.vercel.app/api/movies/${id}`)
+    const res = await axios.get(`${baseUrl}/api/movies/${id}`)
     return res.data
   }
 
   export const addMovie = async (movie) => {
 
-    const res = await axios.post(`https://movie-db-jade.vercel.app/api/movies`, movie)
+    const res = await axios.post(`${baseUrl}/api/movies`, movie)
     return res.data
   }
 
   export const updateMovie = async (movie) => {
-    const res = await axios.patch(`https://movie-db-jade.vercel.app/movies/update/${movie.id}`, movie)
+    const res = await axios.patch(`${baseUrl}/movies/update/${movie.id}`, movie)
     return res.data
   }
 
   export const deleteMovie = async (id) => {
-    const res = await axios.delete(`https://movie-db-jade.vercel.app/api/movies/${id}`)
+    const res = await axios.delete(`${baseUrl}/api/movies/${id}`)
     return res.data
   }
