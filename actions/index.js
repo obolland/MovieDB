@@ -32,7 +32,7 @@ process.env.VERCEL_ENV === "production" ? baseUrl = process.env.VERCEL_URL : bas
   }
 
   export const getMovieById = async (id) => {
-    const res = await axios.get(`https://movie-db-jade.vercel.app/api/movies/${id}`)
+    const res = await axios.get(`${baseUrl}/api/movies/${id}`)
     return res.data
   }
 
