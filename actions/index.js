@@ -23,8 +23,8 @@ import axios from 'axios';
 //https://movie-db-jade.vercel.app
 //http://localhost:3000
 
-let baseUrl = '';
-process.env.VERCEL_ENV === "production" ? baseUrl = process.env.VERCEL_URL : baseUrl = 'http://localhost:3000';
+const baseUrl = process.env.VERCEL_URL;
+//process.env.VERCEL_ENV === "production" ? baseUrl = process.env.VERCEL_URL : baseUrl = 'http://localhost:3000';
 
   export const getMovies = async () => {
     const res = await axios.get(`${baseUrl}/api/movies`)
